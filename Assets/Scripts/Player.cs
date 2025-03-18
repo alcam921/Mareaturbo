@@ -8,15 +8,24 @@ public class Player : MonoBehaviour
     public float jump = 1f;
     private bool isGrounded = false;
     private Rigidbody2D rb2d; 
-    public GameObject Power;
+    public GameObject power;
 
     
     void Update()
     {
         Move();
         Jump();
+        Tiro();
+        
     }
-
+    void Tiro()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(power, gameObject.transform.position,Quaternion.identity);
+                       
+        }
+    }
     void Move()
     {
         if (Input.GetKey(KeyCode.RightArrow))
@@ -31,7 +40,7 @@ public class Player : MonoBehaviour
     }
     void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space)&& isGrounded)
+        if (Input.GetKeyDown(KeyCode.UpArrow)&& isGrounded)
         {
             rb2d.AddForce(new Vector2(rb2d.velocity.x, jump),ForceMode2D.Impulse);
         }

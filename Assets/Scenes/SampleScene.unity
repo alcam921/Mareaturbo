@@ -1007,7 +1007,7 @@ GameObject:
   - component: {fileID: 506868861}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2635,7 +2635,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   jump: 10
-  Power: {fileID: 4562215031911175543, guid: b6921e8a1fd9a5642ac06cc196e43d60, type: 3}
+  power: {fileID: 4562215031911175543, guid: b6921e8a1fd9a5642ac06cc196e43d60, type: 3}
 --- !u!1 &1522648967
 GameObject:
   m_ObjectHideFlags: 0
