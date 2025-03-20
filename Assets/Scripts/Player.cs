@@ -1,14 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     public float speed = 2.5f;
     public float jump = 1f;
+    public float bottomValue = 0f;
     private bool isGrounded = false;
     private Rigidbody2D rb2d; 
     public GameObject power;
+    public float currentTime;
+    public float cooldown;
+    public int playerIndex = 0;
+    public KeyCode shootCode;
 
     
     void Update()
@@ -20,10 +26,11 @@ public class Player : MonoBehaviour
     }
     void Tiro()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        
+        if (Input.GetKeyDown(shootCode) && Time.time >= currentTime)
         {
-            Instantiate(power, gameObject.transform.position,Quaternion.identity);
-                       
+            Instantiate(power, new Vector2(gameObject.transform.position.x,gameObject.transform.position.y-bottomValue),Quaternion.identity);
+            currentTime = Time.time + cooldown;
         }
     }
     void Move()
