@@ -1161,7 +1161,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1185,14 +1185,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4682afb414f0c41a6f17a5c05bcf47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  jump: 14
+  speed: 1000
+  jump: 10
   bottomValue: 0
   power: {fileID: 4562215031911175543, guid: b6921e8a1fd9a5642ac06cc196e43d60, type: 3}
   currentTime: 0
-  cooldown: 1.21
-  playerIndex: 1
-  shootCode: 32
+  cooldown: 2
+  playerIndex: 0
+  shootCode: 110
+  cam: {fileID: 519420033}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1298,7 +1299,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87c7fce1974ac14dae3178311c6486d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1453918272}
+  target:
+  - {fileID: 1453918272}
+  - {fileID: 506868860}
   smoothSpeed: 0.125
   offset: {x: 0, y: 3, z: 0}
 --- !u!1 &618359233
@@ -2488,9 +2491,9 @@ GameObject:
   - component: {fileID: 1453918272}
   - component: {fileID: 1453918271}
   - component: {fileID: 1453918270}
-  - component: {fileID: 1453918275}
   - component: {fileID: 1453918274}
   - component: {fileID: 1453918273}
+  - component: {fileID: 1453918275}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2670,14 +2673,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4682afb414f0c41a6f17a5c05bcf47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  jump: 14
-  bottomValue: 1
+  speed: 1000
+  jump: 10
+  bottomValue: 0
   power: {fileID: 4562215031911175543, guid: b6921e8a1fd9a5642ac06cc196e43d60, type: 3}
   currentTime: 0
-  cooldown: 1.21
-  playerIndex: 0
-  shootCode: 256
+  cooldown: 2
+  playerIndex: 1
+  shootCode: 257
+  cam: {fileID: 519420033}
 --- !u!1 &1522648967
 GameObject:
   m_ObjectHideFlags: 0

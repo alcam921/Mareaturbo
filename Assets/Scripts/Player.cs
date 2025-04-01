@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public float cooldown;
     public int playerIndex = 0;
     public KeyCode shootCode;
+    public CameraFollow cam;
 
     
     void Update()
@@ -35,21 +36,47 @@ public class Player : MonoBehaviour
     }
     void Move()
     {
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.Translate(new Vector2(speed * Time.deltaTime, 0));
-        }
+        /* if (Input.GetKey(KeyCode.RightArrow))
+         {
+             transform.Translate(new Vector2(speed * Time.deltaTime, 0));
+         }
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+         if (Input.GetKey(KeyCode.LeftArrow))
+         {
+             transform.Translate(new Vector2(-speed * Time.deltaTime, 0));
+         }*/
+        float horizontalMove = 2;
+        if (playerIndex == 0)
         {
-            transform.Translate(new Vector2(-speed * Time.deltaTime, 0));
+             horizontalMove = Input.GetAxis("HorizontalP1");
+
         }
+        else
+        {
+             horizontalMove = Input.GetAxis("HorizontalP2");
+        }
+        rb2d.velocity = new Vector2(horizontalMove * speed * Time.deltaTime, rb2d.velocity.y);
     }
     void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow)&& isGrounded)
+        if (playerIndex == 0)
         {
-            rb2d.AddForce(new Vector2(rb2d.velocity.x, jump),ForceMode2D.Impulse);
+            //horizontalMove = Input.GetAxis("Horizontal");
+
+            if (Input.GetKeyDown(KeyCode.M) && isGrounded)
+            {
+                cam.SetHigherPlayer();
+                rb2d.AddForce(new Vector2(rb2d.velocity.x, jump),ForceMode2D.Impulse);
+
+            }
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.Keypad2) && isGrounded)
+            {
+                cam.SetHigherPlayer();
+                rb2d.AddForce(new Vector2(rb2d.velocity.x, jump), ForceMode2D.Impulse);
+            }
         }
     }
     private void Awake()
