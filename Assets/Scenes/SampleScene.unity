@@ -1161,7 +1161,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1172,7 +1172,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &506868863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1187,10 +1187,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1000
   jump: 10
-  bottomValue: 0
+  bottomValue: 1
   power: {fileID: 4562215031911175543, guid: b6921e8a1fd9a5642ac06cc196e43d60, type: 3}
   currentTime: 0
-  cooldown: 2
+  cooldown: 1.5
   playerIndex: 0
   shootCode: 110
   cam: {fileID: 519420033}
@@ -2604,7 +2604,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -2675,10 +2675,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1000
   jump: 10
-  bottomValue: 0
+  bottomValue: 1
   power: {fileID: 4562215031911175543, guid: b6921e8a1fd9a5642ac06cc196e43d60, type: 3}
   currentTime: 0
-  cooldown: 2
+  cooldown: 1.5
   playerIndex: 1
   shootCode: 257
   cam: {fileID: 519420033}
