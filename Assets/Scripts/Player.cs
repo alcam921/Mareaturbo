@@ -36,15 +36,7 @@ public class Player : MonoBehaviour
     }
     void Move()
     {
-        /* if (Input.GetKey(KeyCode.RightArrow))
-         {
-             transform.Translate(new Vector2(speed * Time.deltaTime, 0));
-         }
-
-         if (Input.GetKey(KeyCode.LeftArrow))
-         {
-             transform.Translate(new Vector2(-speed * Time.deltaTime, 0));
-         }*/
+        
         float horizontalMove = 2;
         if (playerIndex == 0)
         {
@@ -65,7 +57,6 @@ public class Player : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.M) && isGrounded)
             {
-                cam.SetHigherPlayer();
                 rb2d.AddForce(new Vector2(rb2d.velocity.x, jump),ForceMode2D.Impulse);
 
             }
@@ -74,7 +65,7 @@ public class Player : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Keypad2) && isGrounded)
             {
-                cam.SetHigherPlayer();
+
                 rb2d.AddForce(new Vector2(rb2d.velocity.x, jump), ForceMode2D.Impulse);
             }
         }
