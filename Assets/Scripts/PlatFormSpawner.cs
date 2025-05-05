@@ -10,7 +10,7 @@ public class PlatFormSpawner : MonoBehaviour
     public float limiteX = 5f;
     public float margemAltura = 10f;
     private float alturaMaximaGerada = 0f;
-    public float distanciaLimpeza = 15f;// Distância para começar a limpar blocos abaixo do jogador
+    public float destroiPlat = 15f;// Distância para começar a limpar blocos abaixo do jogador
     private List<GameObject> blocosGerados = new List<GameObject>();
 
     void Start()
@@ -52,7 +52,7 @@ public class PlatFormSpawner : MonoBehaviour
         {
             GameObject bloco = blocosGerados[i];
 
-            if (bloco != null && bloco.transform.position.y < player.position.y - distanciaLimpeza)
+            if (bloco != null && bloco.transform.position.y < player.position.y - destroiPlat)
             {
                 Destroy(bloco);
                 blocosGerados.RemoveAt(i);

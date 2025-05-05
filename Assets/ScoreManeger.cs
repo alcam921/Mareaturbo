@@ -20,8 +20,7 @@ public class ScoreManeger : MonoBehaviour
         highScore.text = "Recorde: " + recorde.ToString();
     }
 
-    // Update is called once per frame
-    void Update()
+        void Update()
     {
        if (player.position.y > alturaMaxima)
         {
