@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerDeath : MonoBehaviour
 {
-    public float alturaQueda = 6f; // quantas unidades abaixo da câmera o jogador pode cair para morrer
+    public float alturaQueda = 10f; // quantas unidades abaixo da câmera o jogador pode cair para morrer
 
     void Update()
     {

@@ -490,10 +490,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlatPrefab: {fileID: 345597208569089394, guid: 4d05e841c543b4f4c9a65cac5fcd34fa, type: 3}
   player: {fileID: 506868860}
-  distanciaVertical: 6
-  limiteX: 7
-  margemAltura: 5
-  distanciaLimpeza: 8
+  distanciaVertical: 10
+  limiteX: 15
+  margemAltura: 10
+  destroiPlat: 15
 --- !u!4 &100675453
 Transform:
   m_ObjectHideFlags: 0
@@ -877,7 +877,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1453918272}
   smoothSpeed: 0.125
-  offset: {x: 0, y: 9.56, z: 0}
+  offset: {x: 0, y: 8.56, z: 0}
 --- !u!20 &389207160
 Camera:
   m_ObjectHideFlags: 0
@@ -1400,12 +1400,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6447722072507503168, guid: 10f3cacccb0c4c547be76836eba20664, type: 3}
+  m_Sprite: {fileID: -6367560908665664636, guid: cd947491a13509945aa1b644f9db3ef2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.28, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1420,7 +1420,7 @@ Transform:
   m_GameObject: {fileID: 506868857}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.83, y: -8.478, z: 0}
+  m_LocalPosition: {x: -0.83, y: -8.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1458,18 +1458,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.02127853, y: -0.14628983}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 1.6, y: 1.6}
+    newSize: {x: 1.28, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.0638356, y: 1.2925797}
   m_EdgeRadius: 0
 --- !u!50 &506868862
 Rigidbody2D:
@@ -1510,7 +1510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4682afb414f0c41a6f17a5c05bcf47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2000
+  speed: 1000
   jump: 10
   bottomValue: 1
   power: {fileID: 4562215031911175543, guid: b6921e8a1fd9a5642ac06cc196e43d60, type: 3}
@@ -1545,7 +1545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c71d1dc7c855fbb49b7bd1db677acb01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  margemAbaixoCamera: 9.9
+  alturaQueda: 9.8
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1653,7 +1653,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 506868860}
   smoothSpeed: 0.125
-  offset: {x: 0, y: 9.56, z: 0}
+  offset: {x: -5.25, y: 6.06, z: 0}
 --- !u!1 &519604222
 GameObject:
   m_ObjectHideFlags: 0

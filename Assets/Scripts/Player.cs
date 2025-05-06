@@ -16,8 +16,12 @@ public class Player : MonoBehaviour
     public int playerIndex = 0;
     public KeyCode shootCode;
     public CameraFollow cam;
+    private Animator animator;
 
-    
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
     void Update()
     {
         Move();
@@ -47,7 +51,18 @@ public class Player : MonoBehaviour
         {
              horizontalMove = Input.GetAxis("HorizontalP2");
         }
+        if(horizontalMove != 0)
+        {
+        animator.SetBool("isRunning", true);
+
+        }
+        else
+        {
+            animator.SetBool("isRunning", true);
+        }
+        Debug.Log(horizontalMove);
         rb2d.velocity = new Vector2(horizontalMove * speed * Time.deltaTime, rb2d.velocity.y);
+
     }
     void Jump()
     {
