@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
         Move();
         Jump();
         Tiro();
+         
         
     }
     void Tiro()
@@ -58,7 +59,17 @@ public class Player : MonoBehaviour
         }
         else
         {
-            animator.SetBool("isRunning", true);
+            animator.SetBool("isRunning", false);
+        }
+        if (horizontalMove > 0) 
+        {
+            
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
+        else if (horizontalMove < 0)
+        {
+            
+            GetComponent<SpriteRenderer>().flipX = true;
         }
         Debug.Log(horizontalMove);
         rb2d.velocity = new Vector2(horizontalMove * speed * Time.deltaTime, rb2d.velocity.y);

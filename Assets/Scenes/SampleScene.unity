@@ -1545,7 +1545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c71d1dc7c855fbb49b7bd1db677acb01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alturaQueda: 9.8
+  alturaQueda: 9.2
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
