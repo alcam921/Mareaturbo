@@ -27,8 +27,30 @@ public class Player : MonoBehaviour
         Move();
         Jump();
         Tiro();
-         
-        
+        // Verifica o estado do personagem para animações de pulo e queda
+        if (!isGrounded)
+        {
+            if (rb2d.velocity.y > 0f)
+            {
+                // Está subindo (pulo)
+                animator.SetBool("isJumping", true);
+                animator.SetBool("isFalling", false);
+            }
+            else if (rb2d.velocity.y < -0f)
+            {
+                // Está caindo
+                animator.SetBool("isJumping", false);
+                animator.SetBool("isFalling", true);
+            }
+        }
+        else
+        {
+            // Está no chão
+            animator.SetBool("isJumping", false);
+            animator.SetBool("isFalling", false);
+        }
+
+
     }
     void Tiro()
     {
@@ -84,6 +106,9 @@ public class Player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.M) && isGrounded)
             {
                 rb2d.AddForce(new Vector2(rb2d.velocity.x, jump),ForceMode2D.Impulse);
+                // Ativar a animação de pulo
+                animator.SetBool("isJumping", true);
+                animator.SetBool("isFalling", false);
 
             }
         }
@@ -93,6 +118,9 @@ public class Player : MonoBehaviour
             {
 
                 rb2d.AddForce(new Vector2(rb2d.velocity.x, jump), ForceMode2D.Impulse);
+                // Ativar a animação de pulo
+                animator.SetBool("isJumping", true);
+                animator.SetBool("isFalling", false);
             }
         }
     }
