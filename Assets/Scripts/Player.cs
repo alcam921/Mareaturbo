@@ -93,7 +93,7 @@ public class Player : MonoBehaviour
             
             GetComponent<SpriteRenderer>().flipX = true;
         }
-        Debug.Log(horizontalMove);
+        
         rb2d.velocity = new Vector2(horizontalMove * speed * Time.deltaTime, rb2d.velocity.y);
 
     }

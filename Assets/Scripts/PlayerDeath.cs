@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerDeath : MonoBehaviour
 {
-    public float alturaQueda = 10f; // quantas unidades abaixo da câmera o jogador pode cair para morrer
+    public float alturaQueda = 0f; // quantas unidades abaixo da câmera o jogador pode cair para morrer
 
     void Update()
     {
@@ -18,7 +18,7 @@ public class PlayerDeath : MonoBehaviour
     }
     void Morrer()
     {
-        Debug.Log("Você caiu!");// mostra no painel se esta dando ok no codigo
+        Debug.Log("morreu");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // Reinicia a cena atual
     }
 }
