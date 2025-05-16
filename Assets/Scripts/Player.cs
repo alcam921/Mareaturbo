@@ -74,10 +74,18 @@ public class Player : MonoBehaviour
 
     void Die()
     {
+        if (isDead) return;
+
         isDead = true;
-        Debug.Log("Jogador morreu por queda.");
-        // Reinicia a cena atual
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Debug.Log($"Jogador {playerIndex + 1} morreu.");
+
+        // Avisar GameManager que o outro jogador venceu
+        GameManager gm = FindObjectOfType<GameManager>();
+        if (gm != null)
+        {
+            int winner = (playerIndex == 0) ? 1 : 0;
+            gm.PlayerWon(winner);
+        }
     }
 
     void Tiro()
