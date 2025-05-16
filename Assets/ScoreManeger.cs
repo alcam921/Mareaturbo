@@ -26,8 +26,8 @@ public class ScoreManager : MonoBehaviour
         recorde1 = PlayerPrefs.GetInt("Recorde_Player1", 0);
         recorde2 = PlayerPrefs.GetInt("Recorde_Player2", 0);
 
-        highScore1.text = "P1 Recorde: " + recorde1;
-        highScore2.text = "P2 Recorde: " + recorde2;
+        highScore1.text = "Recorde: " + recorde1;
+        highScore2.text = "Recorde: " + recorde2;
     }
 
     void Update()
@@ -37,7 +37,7 @@ public class ScoreManager : MonoBehaviour
         {
             alturaMaxima1 = player1.position.y;
             pontos1 = Mathf.FloorToInt(alturaMaxima1 * 5); // 5 pontos por unidade de altura
-            score1.text = "P1 Score: " + pontos1;
+            score1.text = "Pontos: " + pontos1;
 
             if (pontos1 > recorde1)
             {
@@ -52,7 +52,7 @@ public class ScoreManager : MonoBehaviour
         {
             alturaMaxima2 = player2.position.y;
             pontos2 = Mathf.FloorToInt(alturaMaxima2 * 5);
-            score2.text = "P2 Score: " + pontos2;
+            score2.text = "Pontos: " + pontos2;
 
             if (pontos2 > recorde2)
             {
