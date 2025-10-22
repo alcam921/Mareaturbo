@@ -1,11 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject victoryPanel;
-    public Text victoryText;
+    public TMP_Text victoryText;
     private bool gameEnded = false;
 
     public void PlayerWon(int playerIndex)
