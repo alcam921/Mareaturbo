@@ -7,6 +7,8 @@ public class ScenesControl : MonoBehaviour
 {
     public static ScenesControl instanciar = null;
 
+    [SerializeField] private Animator transitionAnimator;
+
     private void Awake()
     {
         if (instanciar == null)
@@ -22,6 +24,16 @@ public class ScenesControl : MonoBehaviour
     public void LoadScenes(string cena)
     {
         SceneManager.LoadScene(cena);
+    }
+    public void LoadSceneWithTransition(string cena)
+    {
+        StartCoroutine(LoadTransition(transitionAnimator, 0.3f, cena));
+    }
+    private IEnumerator LoadTransition(Animator anim,  float time, string scene)
+    {
+        anim.enabled = true;
+        yield return new WaitForSeconds(time);
+        SceneManager.LoadScene(scene);
     }
 
     public void ExitGame() 
