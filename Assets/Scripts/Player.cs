@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement; // reiniciar a cena
 
 public class Player : MonoBehaviour
 {
@@ -28,18 +24,18 @@ public class Player : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
-        alturaMax = transform.position.y; //Altura máxima
+        alturaMax = transform.position.y; //Altura mï¿½xima
     }
 
     void Update()
     {
-        if (isDead) return; //Não faz nada se já estiver morto
+        if (isDead) return; //Nï¿½o faz nada se jï¿½ estiver morto
 
         Move();
         Jump();
         Tiro();
 
-        //Maior altura já alcançada
+        //Maior altura jï¿½ alcanï¿½ada
         if (transform.position.y > alturaMax)
         {
             alturaMax = transform.position.y;
@@ -51,7 +47,7 @@ public class Player : MonoBehaviour
             Die();
         }
 
-        //Animações de pulo e queda
+        //Animaï¿½ï¿½es de pulo e queda
         if (!isGrounded)
         {
             if (rb2d.velocity.y > 0f)
